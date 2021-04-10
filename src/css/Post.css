@@ -3,6 +3,7 @@
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 3px;
+    margin: 1em;
 }
 
 .post__image {

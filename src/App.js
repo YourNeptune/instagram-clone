@@ -11,9 +11,22 @@ function App() {
           alt="instagram-logo"
         />
       </div>
-      <h1>Instagram Clone</h1>
 
-      <Post />
+      <Post
+        username="Remy Sharp"
+        imgURL="https://images.unsplash.com/photo-1617939254715-cce00563cbc3"
+        caption="Wow"
+      />
+      <Post
+        username="Travis Howard"
+        imgURL="https://images.unsplash.com/photo-1617775623669-20bff4ffaa5c"
+        caption="Wow"
+      />
+      <Post
+        username="Cindy Baker"
+        imgURL="https://images.unsplash.com/photo-1616173758552-d6d8905cf655"
+        caption="Wow"
+      />
     </div>
   );
 }

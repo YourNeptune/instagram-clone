@@ -1,24 +1,24 @@
 import { Avatar } from '@material-ui/core';
 import '../css/Post.css'
 
-const Post = () => {
+const Post = ({username, imgURL, caption}) => {
     return (
       <div className="post">
         <div className="post__header">
           <Avatar
             className="post__avatar"
-            alt="Remy Sharp"
+            alt={username}
             src="/static/images/avatar/1.jpg"
           />
           <h3>username</h3>
         </div>
         <img
           className="post__image"
-          src="https://images.unsplash.com/photo-1617939254715-cce00563cbc3"
+          src={imgURL}
           alt="post"
         />
         <h4 className="post__text">
-          <strong>Username: </strong> caption
+          <strong>{username}: </strong> {caption}
         </h4>
       </div>
     );

@@ -4,12 +4,14 @@
 
 .App {
   background-color: #FAFAFA;
-  height: 100vh;
+  padding-bottom: 1em;
+  /* height: 100vh; */
 }
 
 .App__header{
   background-color: white;
   padding: 15px 15px 5px;
+  margin-bottom: 2em;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
 }
