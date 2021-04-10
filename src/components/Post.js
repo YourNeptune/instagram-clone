@@ -18,7 +18,7 @@ const Post = ({username, imgURL, caption}) => {
           alt="post"
         />
         <h4 className="post__text">
-          <strong>{username}: </strong> {caption}
+          <strong>{username} </strong> {caption}
         </h4>
       </div>
     );
