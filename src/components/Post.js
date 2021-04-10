@@ -10,7 +10,7 @@ const Post = ({username, imgURL, caption}) => {
             alt={username}
             src="/static/images/avatar/1.jpg"
           />
-          <h3>username</h3>
+          <h3>{username}</h3>
         </div>
         <img
           className="post__image"
