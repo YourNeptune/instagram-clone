@@ -5,17 +5,21 @@
 .App {
   background-color: #FAFAFA;
   padding-bottom: 1em;
-  /* height: 100vh; */
+  min-height: 100vh;
 }
 
 .App__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  padding: 15px 15px 5px;
+  padding: 0.6em 2em;
   margin-bottom: 2em;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
+  
 }
 
 .App__logo {
-  width: 6em;
+  height: 1.7em;
 }
