@@ -18,12 +18,12 @@ function App() {
   return (
     <div className="App">
       <Modal open={open} onClose={() => setOpen(false)}>
-        <Signup/>
+        <Signup />
       </Modal>
       <div className="App__header">
         <img
           className="App__logo"
-          src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1024px-Instagram_logo.svg.png"
           alt="instagram-logo"
         />
         <Button type="button" onClick={() => setOpen(true)}>
