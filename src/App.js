@@ -37,6 +37,8 @@ function App() {
     auth
       .signInWithEmailAndPassword(email, password)
       .catch((err) => alert(err.message));
+
+      setOpenSignIn(false);
   };
 
   useEffect(() => {
