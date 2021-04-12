@@ -100,14 +100,14 @@ function App() {
             Log out
           </Button>
         ) : (
-          <>
+          <div>
             <Button type="button" onClick={() => setOpenSignIn(true)}>
               Sign in
             </Button>
             <Button type="button" onClick={() => setOpenSignUp(true)}>
               Sign up
             </Button>
-          </>
+          </div>
         )}
       </div>
 
