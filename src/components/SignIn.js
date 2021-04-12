@@ -1,12 +1,10 @@
 import { Button, OutlinedInput } from "@material-ui/core";
 import "../css/Signup.css";
 
-const Signup = ({
-  email,
+const SignIn = ({
   username,
   password,
-  onSignup,
-  onSetEmail,
+  onSignIn,
   onSetUsername,
   onSetPassword,
 }) => {
@@ -19,16 +17,6 @@ const Signup = ({
       />
 
       <div className="paper__body">
-        <h4 className="paper__text">
-          Sign up to see photos and videos from your friends.
-        </h4>
-        <OutlinedInput
-          className="paper__item"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={onSetEmail}
-        />
         <OutlinedInput
           className="paper__item"
           type="text"
@@ -47,19 +35,13 @@ const Signup = ({
           className="paper__btn"
           type="submit"
           variant="contained"
-          onClick={onSignup}
+          onClick={onSignIn}
         >
-          Sign up
+          Sign in
         </Button>
-
-        <p className="paper__text paper__textp">
-          By signing up, you agree to our <strong>Terms</strong> ,
-          <strong>Data Policy</strong>and <strong>Cookies Policy</strong>.
-          (dummy text)
-        </p>
       </div>
     </>
   );
 };
 
-export default Signup;
+export default SignIn;
