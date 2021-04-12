@@ -6,10 +6,10 @@ import SignIn from "./SignIn";
 const SignInModal = ({
   openSignIn,
   onClose,
-  username,
+  email,
   password,
   onSignIn,
-  onSetUsername,
+  onSetEmail,
   onSetPassword,
 }) => {
   const classes = useStyles();
@@ -20,10 +20,10 @@ const SignInModal = ({
         <>
           <div style={modalStyle} className={`${classes.paper} paper__items`}>
             <SignIn
-              username={username}
+              email={email}
               password={password}
               onSignIn={onSignIn}
-              onSetUsername={onSetUsername}
+              onSetEmail={onSetEmail}
               onSetPassword={onSetPassword}
             />
           </div>

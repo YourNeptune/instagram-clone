@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { db, auth } from "./firebase";
 import { Button } from "@material-ui/core";
 import SignupModal from "./components/SignupModal";
-import SignInModal from './components/SignInModal'
+import SignInModal from "./components/SignInModal";
+import ImageUpload from "./components/ImageUpload";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -38,7 +39,9 @@ function App() {
       .signInWithEmailAndPassword(email, password)
       .catch((err) => alert(err.message));
 
-      setOpenSignIn(false);
+    setOpenSignIn(false);
+    setEmail("");
+    setPassword("");
   };
 
   useEffect(() => {
@@ -61,9 +64,13 @@ function App() {
   }, [user]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) => {
-      setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })));
-    });
+    db.collection("posts")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        setPosts(
+          snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() }))
+        );
+      });
   });
 
   return (
@@ -83,10 +90,10 @@ function App() {
       <SignInModal
         openSignIn={openSignIn}
         onClose={() => setOpenSignIn(false)}
-        username={username}
+        email={email}
         password={password}
         onSignIn={signIn}
-        onSetUsername={(e) => setUsername(e.target.value)}
+        onSetEmail={(e) => setEmail(e.target.value)}
         onSetPassword={(e) => setPassword(e.target.value)}
       />
 
@@ -113,11 +120,13 @@ function App() {
         )}
       </div>
 
+      {user?.displayName && <ImageUpload username={user.displayName} />}
+
       {posts.map(({ id, post }) => (
         <Post
           key={id}
           username={post.username}
-          imgURL={post.imgURL}
+          imageURL={post.imageURL}
           caption={post.caption}
         />
       ))}

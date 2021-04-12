@@ -1,13 +1,7 @@
 import { Button, OutlinedInput } from "@material-ui/core";
 import "../css/Signup.css";
 
-const SignIn = ({
-  username,
-  password,
-  onSignIn,
-  onSetUsername,
-  onSetPassword,
-}) => {
+const SignIn = ({ email, password, onSignIn, onSetEmail, onSetPassword }) => {
   return (
     <>
       <img
@@ -20,9 +14,9 @@ const SignIn = ({
         <OutlinedInput
           className="paper__item"
           type="text"
-          placeholder="Username"
-          value={username}
-          onChange={onSetUsername}
+          placeholder="Email"
+          value={email}
+          onChange={onSetEmail}
         />
         <OutlinedInput
           className="paper__item"

@@ -1,7 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import '../css/Post.css'
 
-const Post = ({username, imgURL, caption}) => {
+const Post = ({username, imageURL, caption}) => {
     return (
       <div className="post">
         <div className="post__header">
@@ -14,7 +14,7 @@ const Post = ({username, imgURL, caption}) => {
         </div>
         <img
           className="post__image"
-          src={imgURL}
+          src={imageURL}
           alt="post"
         />
         <h4 className="post__text">
