@@ -23,3 +23,14 @@
 .App__logo {
   height: 1.7em;
 }
+
+.header__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__icon {
+  margin-right: 1em;
+  cursor: pointer;
+}

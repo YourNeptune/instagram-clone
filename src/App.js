@@ -5,12 +5,15 @@ import { db, auth } from "./firebase";
 import { Button } from "@material-ui/core";
 import SignupModal from "./components/SignupModal";
 import SignInModal from "./components/SignInModal";
-import ImageUpload from "./components/ImageUpload";
+import ImageUploadModal from "./components/ImageUploadModal";
+import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
+import HomeIcon from "@material-ui/icons/Home";
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [openSignUp, setOpenSignUp] = useState(false);
   const [openSignIn, setOpenSignIn] = useState(false);
+  const [openImageUpload, setOpenImageUpload] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -97,6 +100,15 @@ function App() {
         onSetPassword={(e) => setPassword(e.target.value)}
       />
 
+      {user?.displayName && (
+        <ImageUploadModal
+          openImageUpload={openImageUpload}
+          setOpenImageUpload={setOpenImageUpload}
+          onClose={() => setOpenImageUpload(false)}
+          username={user.displayName}
+        />
+      )}
+
       <div className="App__header">
         <img
           className="App__logo"
@@ -105,9 +117,16 @@ function App() {
         />
 
         {user ? (
-          <Button type="button" onClick={() => auth.signOut()}>
-            Log out
-          </Button>
+          <div className="header__icons">
+            <HomeIcon className="header__icon" />
+            <AddAPhotoIcon
+              className="header__icon"
+              onClick={() => setOpenImageUpload(true)}
+            />
+            <Button type="button" onClick={() => auth.signOut()}>
+              Log out
+            </Button>
+          </div>
         ) : (
           <div>
             <Button type="button" onClick={() => setOpenSignIn(true)}>
@@ -119,8 +138,6 @@ function App() {
           </div>
         )}
       </div>
-
-      {user?.displayName && <ImageUpload username={user.displayName} />}
 
       {posts.map(({ id, post }) => (
         <Post

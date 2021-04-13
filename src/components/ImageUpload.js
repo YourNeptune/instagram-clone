@@ -3,7 +3,7 @@ import { useState } from "react";
 import { db, storage } from "../firebase";
 import firebase from "firebase";
 
-const ImageUpload = ({ username }) => {
+const ImageUpload = ({ username, setOpenImageUpload }) => {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState("");
@@ -41,10 +41,10 @@ const ImageUpload = ({ username }) => {
             username: username,
           });
 
-          setProgress(0);
+          // setProgress(0);
           setCaption("");
           setImage(null);
-          console.log("File available at", downloadURL);
+          setOpenImageUpload(false);
         });
       }
     );
@@ -53,6 +53,7 @@ const ImageUpload = ({ username }) => {
   return (
     <div>
       <progress value={progress} max="100" />
+
       <input
         type="text"
         placeholder="Enter a caption..."
@@ -60,7 +61,9 @@ const ImageUpload = ({ username }) => {
         onChange={(e) => setCaption(e.target.value)}
       />
       <input type="file" onChange={handleChange} />
-      <Button onClick={handleUpload}>Upload</Button>
+      <Button type="submit" onClick={handleUpload}>
+        Upload
+      </Button>
     </div>
   );
 };
