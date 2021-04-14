@@ -2,6 +2,7 @@ import { Button } from "@material-ui/core";
 import { useState } from "react";
 import { db, storage } from "../firebase";
 import firebase from "firebase";
+import "../css/ImageUpload.css";
 
 const ImageUpload = ({ username, setOpenImageUpload }) => {
   const [image, setImage] = useState(null);
@@ -51,17 +52,34 @@ const ImageUpload = ({ username, setOpenImageUpload }) => {
   };
 
   return (
-    <div>
-      <progress value={progress} max="100" />
+    <div className="imageUpload">
+      {progress > 0 && (
+        <progress
+          value={progress}
+          max="100"
+          className="imageUpload__progress"
+        />
+      )}
 
       <input
         type="text"
         placeholder="Enter a caption..."
         value={caption}
         onChange={(e) => setCaption(e.target.value)}
+        className="imageUpload__item"
       />
-      <input type="file" onChange={handleChange} />
-      <Button type="submit" onClick={handleUpload}>
+      <input
+        type="file"
+        onChange={handleChange}
+        className="imageUpload__item"
+      />
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        onClick={handleUpload}
+        className="imageUpload__item"
+      >
         Upload
       </Button>
     </div>
