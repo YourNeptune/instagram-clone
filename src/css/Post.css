@@ -19,7 +19,7 @@
 .post__header {
   display: flex;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.7em;
 }
 
 .post__avatar {
@@ -28,7 +28,7 @@
 
 .post__form {
   display: flex;
-  margin-top: 2em;
+  /* margin-top: 1em; */
 }
 
 .post__input {
@@ -42,4 +42,8 @@
   flex: 0.1;
   border: none;
   border-top: 1px solid lightgray;
+}
+
+.post__comment {
+  margin-bottom: 0.2em;
 }
