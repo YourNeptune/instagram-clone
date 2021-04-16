@@ -1,9 +1,9 @@
 .post {
-    max-width: 30em;
-    background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    margin: 1em;
+  max-width: 30em;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  margin: 1em;
 }
 
 .post__image {
@@ -12,16 +12,34 @@
 }
 
 .post__text {
-    font-weight: normal;
-    padding: 0.5em;
+  font-weight: normal;
+  padding: 0.5em;
 }
 
 .post__header {
-    display: flex;
-    align-items: center;
-    padding: 0.5em;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
 }
 
-.post__avatar{
-    margin-right: 0.5em;
+.post__avatar {
+  margin-right: 0.5em;
+}
+
+.post__form {
+  display: flex;
+  margin-top: 2em;
+}
+
+.post__input {
+  flex: 1;
+  padding: 1em 0.5em;
+  border: none;
+  border-top: 1px solid lightgray;
+}
+
+.post__button {
+  flex: 0.1;
+  border: none;
+  border-top: 1px solid lightgray;
 }
