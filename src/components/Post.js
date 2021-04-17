@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "../css/Post.css";
 import { db } from "../firebase";
 import firebase from "firebase";
+import CommentPostForm from './CommentPostForm'
 
 const Post = ({ user, username, imageURL, caption, postId }) => {
   const [comments, setComments] = useState([]);
@@ -55,23 +56,13 @@ const Post = ({ user, username, imageURL, caption, postId }) => {
         ))}
       </div>
 
-      <form className="post__form">
-        <input
-          className="post__input"
-          type="text"
-          placeholder="Add a comment"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
+      {user && (
+        <CommentPostForm
+          comment={comment}
+          setComment={setComment}
+          postComment={postComment}
         />
-        <button
-          className="post__button"
-          type="submit"
-          disabled={!comment}
-          onClick={postComment}
-        >
-          Post
-        </button>
-      </form>
+      )}
     </div>
   );
 };
