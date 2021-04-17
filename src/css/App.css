@@ -9,6 +9,8 @@
 }
 
 .App__header{
+  position: sticky;
+  top:0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +19,7 @@
   margin-bottom: 2em;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
+  z-index: 1;
   
 }
 
