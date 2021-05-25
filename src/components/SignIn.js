@@ -1,7 +1,14 @@
 import { Button, OutlinedInput } from "@material-ui/core";
 import "../css/Signup.css";
 
-const SignIn = ({ email, password, onSignIn, onSetEmail, onSetPassword }) => {
+const SignIn = ({
+  email,
+  password,
+  onSignIn,
+  onSetEmail,
+  onSetPassword,
+  DemoSignIn,
+}) => {
   return (
     <>
       <img
@@ -32,6 +39,14 @@ const SignIn = ({ email, password, onSignIn, onSetEmail, onSetPassword }) => {
           onClick={onSignIn}
         >
           Sign in
+        </Button>
+        <Button
+          className="paper__btn"
+          type="submit"
+          variant="contained"
+          onClick={DemoSignIn}
+        >
+          Demo Sign in
         </Button>
       </div>
     </>

@@ -11,6 +11,7 @@ const SignInModal = ({
   onSignIn,
   onSetEmail,
   onSetPassword,
+  DemoSignIn,
 }) => {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
@@ -25,6 +26,7 @@ const SignInModal = ({
               onSignIn={onSignIn}
               onSetEmail={onSetEmail}
               onSetPassword={onSetPassword}
+              DemoSignIn={DemoSignIn}
             />
           </div>
         </>

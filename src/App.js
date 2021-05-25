@@ -47,6 +47,12 @@ function App() {
     setPassword("");
   };
 
+  const DemoSignIn = (e) => {
+    e.preventDefault();
+    setEmail('eva123@example.com')
+    setPassword('eva123')
+  }
+
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -98,6 +104,7 @@ function App() {
         onSignIn={signIn}
         onSetEmail={(e) => setEmail(e.target.value)}
         onSetPassword={(e) => setPassword(e.target.value)}
+        DemoSignIn={DemoSignIn}
       />
 
       {user?.displayName && (
@@ -139,7 +146,7 @@ function App() {
         )}
       </div>
 
-      <div className='posts'>
+      <div className="posts">
         {posts.map(({ id, post }) => (
           <Post
             key={id}
